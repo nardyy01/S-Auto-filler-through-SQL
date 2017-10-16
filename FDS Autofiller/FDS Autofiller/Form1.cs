@@ -104,14 +104,33 @@ namespace FDS_Autofiller
 
         private void button5_Click(object sender, EventArgs e)
         {
+            try
+            {
+                //Get an entry from the sql database
+                entry = getEntry();
+                //Enter entry's First and Last name
+                webBrowser1.Document.GetElementById("question_124926").SetAttribute("value", entry.firstName);
+                webBrowser1.Document.GetElementById("question_124927").SetAttribute("value", entry.lastName);
+                //Handle yes buttons
+                webBrowser1.Document.GetElementById("radio_129859_0").InvokeMember("click");
+                webBrowser1.Document.GetElementById("radio_125390_0").InvokeMember("click");
+                webBrowser1.Document.GetElementById("button_next").InvokeMember("click");
+            }
+            catch { errorProvider.SetError(button4, "You click the wrong button for this page!"); }
 
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                //Enter entry's email
+                webBrowser1.Document.GetElementById("question_124928").SetAttribute("value", entry.Email);
+                webBrowser1.Document.GetElementById("button_next").InvokeMember("click");
+                label1.Text = "# FDS Submitted: " + (FDS_Submitted); FDS_Submitted++;
+            }
+            catch { errorProvider.SetError(button6, "You click the wrong button for this page!"); }
         }
-
 
 
 
