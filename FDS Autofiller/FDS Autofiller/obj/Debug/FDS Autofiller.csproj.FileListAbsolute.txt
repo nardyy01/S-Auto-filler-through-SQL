@@ -1,0 +1,13 @@
+c:\users\itacticianx\documents\visual studio 2015\Projects\FDS Autofiller\FDS Autofiller\bin\Debug\FDS Autofiller.exe.config
+c:\users\itacticianx\documents\visual studio 2015\Projects\FDS Autofiller\FDS Autofiller\bin\Debug\FDS Autofiller.exe
+c:\users\itacticianx\documents\visual studio 2015\Projects\FDS Autofiller\FDS Autofiller\bin\Debug\FDS Autofiller.pdb
+c:\users\itacticianx\documents\visual studio 2015\Projects\FDS Autofiller\FDS Autofiller\obj\Debug\FDS Autofiller.csprojResolveAssemblyReference.cache
+c:\users\itacticianx\documents\visual studio 2015\Projects\FDS Autofiller\FDS Autofiller\obj\Debug\FDS_Autofiller.Form1.resources
+c:\users\itacticianx\documents\visual studio 2015\Projects\FDS Autofiller\FDS Autofiller\obj\Debug\FDS_Autofiller.Properties.Resources.resources
+c:\users\itacticianx\documents\visual studio 2015\Projects\FDS Autofiller\FDS Autofiller\obj\Debug\FDS Autofiller.csproj.GenerateResource.Cache
+c:\users\itacticianx\documents\visual studio 2015\Projects\FDS Autofiller\FDS Autofiller\obj\Debug\FDS Autofiller.exe
+c:\users\itacticianx\documents\visual studio 2015\Projects\FDS Autofiller\FDS Autofiller\obj\Debug\FDS Autofiller.pdb
+C:\Users\iTacticianx\Documents\Visual Studio 2015\Projects\FDS Autofiller\FDS Autofiller\bin\Debug\FDS Autofiller.exe.manifest
+C:\Users\iTacticianx\Documents\Visual Studio 2015\Projects\FDS Autofiller\FDS Autofiller\bin\Debug\FDS Autofiller.application
+C:\Users\iTacticianx\Documents\Visual Studio 2015\Projects\FDS Autofiller\FDS Autofiller\obj\Debug\FDS Autofiller.exe.manifest
+C:\Users\iTacticianx\Documents\Visual Studio 2015\Projects\FDS Autofiller\FDS Autofiller\obj\Debug\FDS Autofiller.application
