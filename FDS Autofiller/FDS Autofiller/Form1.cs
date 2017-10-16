@@ -131,9 +131,66 @@ namespace FDS_Autofiller
             }
             catch { errorProvider.SetError(button6, "You click the wrong button for this page!"); }
         }
+        
+public Entry getEntry()
+        {
+            //Connection
+            SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-3FQRKAU;Initial Catalog=FDS_EntryList;Integrated Security=True");
+            //DataAdapter - CommandBuilder - DataSet
+            SqlDataAdapter da;
+            SqlCommandBuilder cmdBuilder;
+            DataSet entryDataSet = new DataSet();
 
+            //Create a new entry to hold info
+            Entry entry = new Entry();
+            //Using my sql connection
+            using (con)
+            {
+                //Pull all data from my Entries table
+                string oString = "SELECT * FROM Entries";
+                SqlCommand oCmd = new SqlCommand(oString, con);
+                //Open the connection to sql
 
+                con.Open();
+                //Using what we are pulled
+                using (SqlDataReader oReader = oCmd.ExecuteReader())
+                {
+                    //Read through the data 
+                    while (oReader.Read())
+                    {
+                        entry.firstName = oReader["FIRST_NAME"].ToString();
+                        entry.lastName = oReader["LAST_NAME"].ToString();
+                        entry.Email = oReader["EMAIL"].ToString();
+                        entry.Used = oReader["USED"].ToString();
+                        entry.EID = oReader["EID"].ToString();
 
+                        //if the entry is not used keep it
+                        if (entry.Used == "False")
+                        {
+                            oReader.Close();
+                            //Initialize SQLDataAdapter
+                            da = new SqlDataAdapter("SELECT * FROM Entries WHERE EID ='"+ entry.EID +"'", con);
+                            //Initialize SQLCommandBuilder
+                            cmdBuilder = new SqlCommandBuilder(da);
+                            //Populate DataSet
+                            da.Fill(entryDataSet, "Entries");
+
+                            //Modify value for USED. Make true
+                            entryDataSet.Tables["Entries"].Rows[0]["USED"] = "True";
+
+                            //Post the data to database
+                            da.Update(entryDataSet, "Entries");
+                            break;
+                        }
+                    }               
+                    //Close connection to sql
+                    con.Close();
+                }
+
+            }
+            //Return the entry that we kept
+            return (entry);
+        }
     }
 }
 
